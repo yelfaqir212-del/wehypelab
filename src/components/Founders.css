@@ -1,0 +1,411 @@
+.founders {
+  position: relative;
+  padding: 8rem 2rem;
+  background: var(--bg-primary);
+  overflow: hidden;
+}
+
+.founders-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* Section Header */
+.founders-header {
+  max-width: 800px;
+  margin: 0 auto 5rem;
+  text-align: center;
+}
+
+/* Founders Grid */
+.founders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 4rem;
+  margin-top: 4rem;
+}
+
+/* Founder Card */
+.founder-card {
+  position: relative;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 3rem 2.5rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.founder-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    var(--overlay) 0%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.founder-card:hover::before {
+  opacity: 1;
+}
+
+.founder-card:hover {
+  border-color: var(--text-primary);
+  box-shadow: 0 30px 80px var(--shadow-hover);
+  transform: translateY(-15px);
+}
+
+/* Card Background */
+.founder-card-bg {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-hexagon {
+  color: var(--text-primary);
+}
+
+/* Founder Image Container */
+.founder-image-container {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-hexagon-frame {
+  position: absolute;
+  inset: 0;
+  color: var(--text-tertiary);
+  opacity: 0.3;
+  z-index: 1;
+  transition: all 0.4s ease;
+}
+
+.founder-card:hover .image-hexagon-frame {
+  opacity: 0.6;
+  transform: rotate(180deg);
+}
+
+.frame-hexagon {
+  color: var(--text-primary);
+}
+
+.founder-image {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 2;
+  clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
+}
+
+.founder-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.founder-card:hover .founder-image img {
+  transform: scale(1.1);
+}
+
+/* Grayscale Filter for Second Founder */
+.founder-image.grayscale img {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+
+.founder-card:hover .founder-image.grayscale img {
+  filter: grayscale(80%);
+  -webkit-filter: grayscale(80%);
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.image-border {
+  position: absolute;
+  inset: -4px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  z-index: 0;
+  clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
+  transition: all 0.3s ease;
+}
+
+.founder-card:hover .image-border {
+  border-color: var(--text-primary);
+  box-shadow: 0 0 20px var(--shadow-hover);
+}
+
+/* Founder Info */
+.founder-info {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+}
+
+.founder-name {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.founder-role {
+  font-size: 1rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.founder-divider {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--border) 50%,
+    transparent 100%
+  );
+  margin: 1.5rem auto;
+  transform-origin: left;
+}
+
+.founder-bio {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Expertise Tags */
+.founder-expertise {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.expertise-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.expertise-tag:hover {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+  background: var(--overlay);
+}
+
+.expertise-tag span {
+  white-space: nowrap;
+}
+
+/* Card Hover Line */
+.card-hover-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--text-primary) 0%,
+    var(--text-tertiary) 100%
+  );
+  transform-origin: left;
+  border-radius: 12px 12px 0 0;
+}
+
+/* Decorative Elements */
+.founders-decoration {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.decoration-line {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--border) 50%,
+    transparent 100%
+  );
+  transform-origin: left;
+}
+
+.decoration-line.line-1 {
+  top: 30%;
+  left: 0;
+  right: 0;
+}
+
+.decoration-line.line-2 {
+  bottom: 30%;
+  left: 0;
+  right: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .founders {
+    padding: 6rem 2rem;
+  }
+
+  .founders-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .founder-card {
+    padding: 2.5rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .founders {
+    padding: 5rem 1.5rem;
+  }
+
+  .founders-header {
+    margin-bottom: 3rem;
+  }
+
+  .founders-grid {
+    gap: 2rem;
+  }
+
+  .founder-image-container {
+    width: 220px;
+    height: 220px;
+  }
+
+  .founder-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .founder-name {
+    font-size: 1.75rem;
+  }
+
+  .founder-role {
+    font-size: 0.875rem;
+  }
+
+  .founder-bio {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .founders {
+    padding: 4rem 1rem;
+  }
+
+  .founder-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .founder-image-container {
+    width: 180px;
+    height: 180px;
+  }
+
+  .founder-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .founder-name {
+    font-size: 1.5rem;
+  }
+
+  .founder-bio {
+    font-size: 0.9rem;
+  }
+
+  .expertise-tag {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* Animation States */
+.founder-card {
+  will-change: transform;
+}
+
+.founder-image img {
+  will-change: transform;
+}
+
+/* Focus States */
+.founder-card:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+
+/* Performance Optimizations */
+@media (prefers-reduced-motion: reduce) {
+  .founder-card,
+  .founder-image img,
+  .image-hexagon-frame {
+    transition: none;
+  }
+}

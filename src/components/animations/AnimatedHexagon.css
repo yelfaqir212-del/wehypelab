@@ -1,0 +1,90 @@
+.hexagon-container {
+  position: relative;
+  display: inline-block;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.hexagon-container svg {
+  display: block;
+  overflow: visible;
+  filter: drop-shadow(0 4px 12px var(--shadow));
+  transition: filter 0.3s ease;
+}
+
+.hexagon-container:hover svg {
+  filter: drop-shadow(0 8px 24px var(--shadow-hover));
+}
+
+/* Animated glow effect */
+.hexagon-container::before {
+  content: '';
+  position: absolute;
+  inset: -10%;
+  background: radial-gradient(
+    circle,
+    var(--text-primary) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  z-index: -1;
+  filter: blur(20px);
+}
+
+.hexagon-container:hover::before {
+  opacity: 0.2;
+}
+
+/* Hexagon grid layout */
+.hexagon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 40px;
+  padding: 40px;
+  justify-items: center;
+  align-items: center;
+}
+
+/* Staggered animation delays for grids */
+.hexagon-container:nth-child(1) { animation-delay: 0s; }
+.hexagon-container:nth-child(2) { animation-delay: 0.1s; }
+.hexagon-container:nth-child(3) { animation-delay: 0.2s; }
+.hexagon-container:nth-child(4) { animation-delay: 0.3s; }
+.hexagon-container:nth-child(5) { animation-delay: 0.4s; }
+.hexagon-container:nth-child(6) { animation-delay: 0.5s; }
+
+/* Size variants */
+.hexagon-small {
+  width: 60px;
+  height: 60px;
+}
+
+.hexagon-medium {
+  width: 100px;
+  height: 100px;
+}
+
+.hexagon-large {
+  width: 150px;
+  height: 150px;
+}
+
+.hexagon-xlarge {
+  width: 200px;
+  height: 200px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hexagon-grid {
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .hexagon-large,
+  .hexagon-xlarge {
+    width: 100px;
+    height: 100px;
+  }
+}

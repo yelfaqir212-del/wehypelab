@@ -1,0 +1,136 @@
+.animated-line-container {
+  position: relative;
+  overflow: visible;
+}
+
+.animated-line-container svg {
+  overflow: visible;
+}
+
+/* Line glow effects */
+.animated-line-container svg line,
+.animated-line-container svg path {
+  filter: drop-shadow(0 0 8px currentColor);
+  transition: filter 0.3s ease;
+}
+
+.animated-line-container:hover svg line,
+.animated-line-container:hover svg path {
+  filter: drop-shadow(0 0 16px currentColor);
+}
+
+/* Connected lines styles */
+.connected-lines {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.connected-lines path {
+  filter: drop-shadow(0 0 4px currentColor);
+}
+
+/* Grid lines container */
+.grid-lines {
+  z-index: 0;
+}
+
+.grid-lines line {
+  vector-effect: non-scaling-stroke;
+}
+
+/* Decorative line patterns */
+.line-pattern-horizontal {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--text-primary) 50%,
+    transparent 100%
+  );
+  opacity: 0.3;
+}
+
+.line-pattern-vertical {
+  position: relative;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    var(--text-primary) 50%,
+    transparent 100%
+  );
+  opacity: 0.3;
+}
+
+/* Animated divider */
+.line-divider {
+  width: 100%;
+  height: 2px;
+  background: var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.line-divider::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--text-primary);
+  animation: slideRight 2s ease-in-out infinite;
+}
+
+@keyframes slideRight {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Corner lines */
+.corner-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.corner-lines::before,
+.corner-lines::after {
+  content: '';
+  position: absolute;
+  background: var(--text-primary);
+}
+
+.corner-lines::before {
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+}
+
+.corner-lines::after {
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 40px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .animated-line-container svg line,
+  .animated-line-container svg path {
+    filter: drop-shadow(0 0 4px currentColor);
+  }
+
+  .connected-lines path {
+    filter: drop-shadow(0 0 2px currentColor);
+  }
+}

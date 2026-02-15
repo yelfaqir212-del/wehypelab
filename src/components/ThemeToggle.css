@@ -1,0 +1,134 @@
+.theme-toggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  z-index: 100;
+}
+
+.theme-toggle:hover {
+  border-color: var(--text-primary);
+  background: var(--bg-tertiary);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 4px;
+}
+
+.theme-toggle-icon {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+}
+
+.theme-toggle-icon svg {
+  display: block;
+  filter: drop-shadow(0 2px 8px var(--shadow));
+  transition: filter 0.3s ease;
+}
+
+.theme-toggle:hover .theme-toggle-icon svg {
+  filter: drop-shadow(0 4px 12px var(--shadow-hover));
+}
+
+.theme-toggle-hexagon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.6;
+  color: var(--text-tertiary);
+}
+
+.theme-toggle-hexagon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Ripple effect on click */
+.theme-toggle::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    var(--text-primary) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-toggle:active::before {
+  opacity: 0.2;
+  transform: scale(1);
+  transition: all 0s;
+}
+
+/* Glow effect */
+.theme-toggle::after {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    var(--text-primary) 0%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+  filter: blur(15px);
+}
+
+.theme-toggle:hover::after {
+  opacity: 0.15;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .theme-toggle {
+    width: 50px;
+    height: 50px;
+  }
+
+  .theme-toggle-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Animations for theme change */
+@keyframes themeChange {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.theme-toggle.changing {
+  animation: themeChange 0.6s ease-in-out;
+}
