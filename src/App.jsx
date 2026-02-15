@@ -313,54 +313,7 @@ function App() {
             <div className="footer-container">
               <div className="footer-grid">
                 <div className="footer-column">
-                  <div className="footer-logo">
-                    <h3>WE HYPE</h3>
-                    <p>Amplify Your Influence</p>
-                  </div>
-                  <p className="footer-description">
-                    Empowering creators to build sustainable digital businesses
-                    through expert training and strategic growth.
-                  </p>
-                </div>
-
-                <div className="footer-column">
-                  <h4>Services</h4>
-                  <ul>
-                    <li>
-                      <a href="#services">Content Strategy</a>
-                    </li>
-                    <li>
-                      <a href="#services">Growth Hacking</a>
-                    </li>
-                    <li>
-                      <a href="#services">Personal Branding</a>
-                    </li>
-                    <li>
-                      <a href="#services">Video Production</a>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="footer-column">
-                  <h4>Company</h4>
-                  <ul>
-                    <li>
-                      <a href="#about">About Us</a>
-                    </li>
-                    <li>
-                      <a href="#process">Our Process</a>
-                    </li>
-                    <li>
-                      <a href="#testimonials">Success Stories</a>
-                    </li>
-                    <li>
-                      <a href="#contact">Contact</a>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="footer-column">
-                  <h4>Connect</h4>
+                  <h4>Social</h4>
                   <ul>
                     <li>
                       <a
@@ -399,6 +352,18 @@ function App() {
                       </a>
                     </li>
                   </ul>
+                </div>
+
+                <div className="footer-column">
+                  <div className="footer-logo">
+                    <h3>WE HYPE</h3>
+                    <p>Amplify Your Influence</p>
+                  </div>
+                  <p className="footer-description">
+                    Empowering creators to build sustainable digital businesses
+                    <br />
+                    through expert training and strategic growth.
+                  </p>
                 </div>
               </div>
 
