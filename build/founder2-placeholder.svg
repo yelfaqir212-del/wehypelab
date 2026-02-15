@@ -1,0 +1,5 @@
+<svg width="800" height="800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="800" fill="#2a2a2a"/>
+  <text x="400" y="400" font-family="Arial" font-size="48" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">Founder 2</text>
+  <text x="400" y="450" font-family="Arial" font-size="24" fill="#a0a0a0" text-anchor="middle" dominant-baseline="middle">Place founder2.jpg in src/assets/</text>
+</svg>

@@ -363,22 +363,38 @@ function App() {
                   <h4>Connect</h4>
                   <ul>
                     <li>
-                      <a href="#" target="_blank" rel="noopener noreferrer">
+                      <a
+                        href="https://instagram.com/wehypelab"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         Instagram
                       </a>
                     </li>
                     <li>
-                      <a href="#" target="_blank" rel="noopener noreferrer">
+                      <a
+                        href="https://twitter.com/wehypelab"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         Twitter/X
                       </a>
                     </li>
                     <li>
-                      <a href="#" target="_blank" rel="noopener noreferrer">
+                      <a
+                        href="https://linkedin.com/company/wehypelab"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         LinkedIn
                       </a>
                     </li>
                     <li>
-                      <a href="#" target="_blank" rel="noopener noreferrer">
+                      <a
+                        href="https://youtube.com/@wehypelab"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         YouTube
                       </a>
                     </li>
@@ -391,9 +407,9 @@ function App() {
                 <div className="footer-bottom-content">
                   <p>&copy; 2024 We Hype Lab. All rights reserved.</p>
                   <div className="footer-links">
-                    <a href="#">Privacy Policy</a>
+                    <a href="/privacy">Privacy Policy</a>
                     <span>•</span>
-                    <a href="#">Terms of Service</a>
+                    <a href="/terms">Terms of Service</a>
                   </div>
                 </div>
               </div>

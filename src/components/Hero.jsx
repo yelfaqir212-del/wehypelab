@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import AnimatedHexagon from "./animations/AnimatedHexagon";
 import AnimatedLines, { GridLines } from "./animations/AnimatedLines";
