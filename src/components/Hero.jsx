@@ -151,7 +151,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <span className="eyebrow-line"></span>
-            <span className="eyebrow-text">INFLUENCER TRAINING AGENCY</span>
+            <span className="eyebrow-text">INFLUENCE ECOSYSTEM B2B / B2C</span>
             <span className="eyebrow-line"></span>
           </motion.div>
 
@@ -163,9 +163,9 @@ const Hero = () => {
             animate="visible"
           >
             <span className="title-line">
-              <span className="title-word">WE</span>
+              <span className="title-word brand-we">WE</span>
               <motion.span
-                className="title-word highlight"
+                className="title-word highlight brand-hype"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
@@ -174,10 +174,10 @@ const Hero = () => {
               </motion.span>
             </span>
             <span className="title-line">
-              <span className="title-word">YOUR</span>
+              <span className="title-word">BRANDS</span>
             </span>
             <span className="title-line">
-              <span className="title-word">INFLUENCE</span>
+              <span className="title-word">& CREATORS</span>
             </span>
           </motion.h1>
 
@@ -188,9 +188,10 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
           >
-            Transform your digital presence with expert training, strategic
-            growth, and data-driven results. We help influencers amplify their
-            reach and maximize their impact.
+            We Hype, un écosystème d&apos;influence à double dimension — un pont
+            stratégique entre marques et créateurs.
+            <br />
+            Building the Future of Influence.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -207,7 +208,7 @@ const Hero = () => {
               whileTap="tap"
               onClick={(e) => scrollToSection(e, "#contact")}
             >
-              <span className="button-text">Start Your Journey</span>
+              <span className="button-text">Lancer une campagne</span>
               <span className="button-hexagon">
                 <AnimatedHexagon size={20} animate={false} filled={true} />
               </span>
@@ -218,9 +219,9 @@ const Hero = () => {
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
-              onClick={(e) => scrollToSection(e, "#about")}
+              onClick={(e) => scrollToSection(e, "#services")}
             >
-              <span className="button-text">Why We Hype Lab</span>
+              <span className="button-text">Rejoindre le Lab</span>
               <motion.span
                 className="button-arrow"
                 initial={{ x: 0 }}
@@ -246,9 +247,9 @@ const Hero = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 1.2 }}
               >
-                40+
+                2
               </motion.div>
-              <div className="stat-label">Brands</div>
+              <div className="stat-label">Dimensions: B2B &amp; B2C</div>
             </div>
 
             <div className="stat-divider">
@@ -262,9 +263,9 @@ const Hero = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 1.4 }}
               >
-                1.7M+
+                5
               </motion.div>
-              <div className="stat-label">Audience Reached</div>
+              <div className="stat-label">Etapes de methode</div>
             </div>
 
             <div className="stat-divider">
@@ -278,9 +279,9 @@ const Hero = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 1.6 }}
               >
-                98%
+                360°
               </motion.div>
-              <div className="stat-label">Success Rate</div>
+              <div className="stat-label">Influence ecosystem</div>
             </div>
           </motion.div>
         </div>

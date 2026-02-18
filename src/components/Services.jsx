@@ -11,84 +11,130 @@ const Services = () => {
     threshold: 0.1,
   });
 
-  const services = [
+  const serviceGroups = [
     {
-      id: 1,
-      title: "Content Strategy",
+      id: "b2b",
+      label: "B2B - Pour les marques",
       description:
-        "Develop data-driven content strategies that resonate with your target audience and drive engagement.",
-      features: [
-        "Audience Analysis",
-        "Content Calendar Planning",
-        "Trend Research",
-        "Performance Metrics",
+        "Un accompagnement stratégique et opérationnel pour activer l'influence comme levier business.",
+      cta: "Parler a l'equipe",
+      ctaTarget: "#contact",
+      services: [
+        {
+          id: 1,
+          title: "Campagnes d'influence",
+          description:
+            "Concevoir et executer des campagnes d'influence full-funnel, du cadrage aux performances finales.",
+          features: [
+            "Selection de talents",
+            "Narratif de campagne",
+            "Pilotage operationnel",
+            "Reporting et ROI",
+          ],
+          icon: "📣",
+        },
+        {
+          id: 2,
+          title: "PR",
+          description:
+            "Amplifier votre prise de parole avec des activations media et des relations presse credibles.",
+          features: [
+            "Relations presse",
+            "Narration de marque",
+            "Activation editors & KOLs",
+            "Visibilite multi-canale",
+          ],
+          icon: "📰",
+        },
+        {
+          id: 3,
+          title: "Events",
+          description:
+            "Imaginer des experiences memorables qui connectent votre marque aux createurs et aux communautes.",
+          features: [
+            "Concept & production",
+            "Guestlist createurs",
+            "Couverture social media",
+            "Mesure d'impact",
+          ],
+          icon: "🎤",
+        },
+        {
+          id: 4,
+          title: "Gestion de talents",
+          description:
+            "Identifier, encadrer et valoriser les profils influenceurs alignes avec vos objectifs de marque.",
+          features: [
+            "Casting strategique",
+            "Negociation partenariats",
+            "Suivi contractuel",
+            "Optimisation de collaborations",
+          ],
+          icon: "🤝",
+        },
       ],
-      icon: "📊",
     },
     {
-      id: 2,
-      title: "Growth Hacking",
+      id: "b2c",
+      label: "B2C - Pour les createurs",
       description:
-        "Implement proven growth techniques to rapidly expand your reach and build a loyal following.",
-      features: [
-        "Viral Campaign Design",
-        "Cross-Platform Growth",
-        "Algorithm Optimization",
-        "Community Building",
+        "Un cadre de progression pour structurer votre marque personnelle, accelerer votre croissance et monetiser durablement.",
+      cta: "Booster ma croissance",
+      ctaTarget: "#contact",
+      services: [
+        {
+          id: 5,
+          title: "Formation influenceurs",
+          description:
+            "Monter en competence avec une methode concrete sur le contenu, l'audience et la performance.",
+          features: [
+            "Positionnement de niche",
+            "Formats qui convertissent",
+            "Systemes de production",
+            "Lecture des KPIs",
+          ],
+          icon: "🎓",
+        },
+        {
+          id: 6,
+          title: "Personal branding",
+          description:
+            "Construire une identite de marque forte, coherente et reconnaissable sur toutes vos plateformes.",
+          features: [
+            "Storytelling personnel",
+            "Territoire visuel",
+            "Voix editoriale",
+            "Cohesion multicanale",
+          ],
+          icon: "✨",
+        },
+        {
+          id: 7,
+          title: "Growth hacking",
+          description:
+            "Activer des leviers de croissance test-and-learn pour gagner en visibilite et en engagement.",
+          features: [
+            "Acceleration organique",
+            "Boucles d'acquisition",
+            "Optimisation formats",
+            "Scaling des contenus",
+          ],
+          icon: "🚀",
+        },
+        {
+          id: 8,
+          title: "Monetisation",
+          description:
+            "Structurer des revenus predictibles via les deals marques, l'offre et les activations commerciales.",
+          features: [
+            "Offres createurs",
+            "Negociation sponsoring",
+            "Diversification revenus",
+            "Pilotage rentabilite",
+          ],
+          icon: "💰",
+        },
       ],
-      icon: "🚀",
-    },
-    {
-      id: 3,
-      title: "Personal Branding",
-      description:
-        "Craft a unique and authentic personal brand that sets you apart from the competition.",
-      features: [
-        "Brand Identity Design",
-        "Voice & Tone Development",
-        "Visual Consistency",
-        "Brand Guidelines",
-      ],
-      icon: "✨",
-    },
-    {
-      id: 4,
-      title: "Video Production",
-      description:
-        "Master the art of creating high-quality, engaging video content that captivates viewers.",
-      features: [
-        "Filming Techniques",
-        "Editing Mastery",
-        "Storytelling Methods",
-        "Platform Optimization",
-      ],
-      icon: "🎥",
-    },
-    {
-      id: 5,
-      title: "Monetization",
-      description:
-        "Learn multiple revenue streams and monetization strategies to maximize your earning potential.",
-      features: [
-        "Sponsorship Deals",
-        "Affiliate Marketing",
-        "Product Launches",
-        "Revenue Diversification",
-      ],
-      icon: "💰",
-    },
-    {
-      id: 6,
-      title: "Analytics & Insights",
-      description:
-        "Leverage data analytics to make informed decisions and continuously optimize your performance.",
-      features: [
-        "Performance Tracking",
-        "Audience Insights",
-        "Competitor Analysis",
-        "ROI Optimization",
-      ],
-      icon: "📈",
     },
   ];
 
@@ -132,6 +178,21 @@ const Services = () => {
     },
   };
 
+  const scrollToSection = (e, sectionId) => {
+    e.preventDefault();
+    const element = document.querySelector(sectionId);
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <section id="services" className="services" ref={ref}>
       <div className="services-container">
@@ -150,11 +211,11 @@ const Services = () => {
           >
             <span className="eyebrow-number">03</span>
             <AnimatedLines type="horizontal" width="60px" delay={0.3} />
-            <span className="eyebrow-text">WHAT WE OFFER</span>
+            <span className="eyebrow-text">B2B + B2C SOLUTIONS</span>
           </motion.div>
 
           <motion.h2 className="section-title" variants={titleVariants}>
-            Our Services
+            Services We Hype
           </motion.h2>
 
           <motion.p
@@ -163,134 +224,182 @@ const Services = () => {
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Comprehensive training programs designed to elevate your influence
-            and transform your digital presence into a thriving business.
+            Une offre a double dimension: activations pour les marques et
+            acceleration pour les createurs, dans un meme ecosysteme.
           </motion.p>
         </motion.div>
 
-        {/* Services Grid */}
+        {/* Services Split */}
         <motion.div
-          className="services-grid"
+          className="services-groups"
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
         >
-          {services.map((service, index) => (
+          {serviceGroups.map((group, groupIndex) => (
             <motion.div
-              key={service.id}
-              className="service-card"
+              key={group.id}
+              className="services-group"
               variants={cardVariants}
-              whileHover={{
-                y: -10,
-                transition: { duration: 0.3 },
-              }}
             >
-              {/* Card Background Hexagon */}
-              <div className="card-background">
-                <AnimatedHexagon
-                  size={120}
-                  delay={0.5 + index * 0.1}
-                  className="card-hexagon"
-                />
+              <div className="services-group-header">
+                <h3 className="services-group-title">{group.label}</h3>
+                <p className="services-group-description">{group.description}</p>
+                <motion.button
+                  className="services-group-cta"
+                  whileHover={{ x: 4 }}
+                  whileTap={{ scale: 0.97 }}
+                  onClick={(e) => scrollToSection(e, group.ctaTarget)}
+                >
+                  {group.cta}
+                </motion.button>
               </div>
 
-              {/* Card Number */}
-              <motion.div
-                className="card-number"
-                initial={{ opacity: 0, scale: 0 }}
-                animate={
-                  inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }
-                }
-                transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-              >
-                {String(service.id).padStart(2, "0")}
-              </motion.div>
+              <div className="services-grid services-grid-group">
+                {group.services.map((service, index) => (
+                  <motion.div
+                    key={service.id}
+                    className="service-card"
+                    variants={cardVariants}
+                    whileHover={{
+                      y: -10,
+                      transition: { duration: 0.3 },
+                    }}
+                  >
+                    {/* Card Background Hexagon */}
+                    <div className="card-background">
+                      <AnimatedHexagon
+                        size={120}
+                        delay={0.5 + (groupIndex * 4 + index) * 0.1}
+                        className="card-hexagon"
+                      />
+                    </div>
 
-              {/* Card Icon */}
-              <motion.div
-                className="card-icon"
-                initial={{ opacity: 0, scale: 0, rotate: -180 }}
-                animate={
-                  inView
-                    ? { opacity: 1, scale: 1, rotate: 0 }
-                    : { opacity: 0, scale: 0, rotate: -180 }
-                }
-                transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-              >
-                <span className="icon-emoji">{service.icon}</span>
-                <div className="icon-hexagon">
-                  <AnimatedHexagon size={80} animate={false} />
-                </div>
-              </motion.div>
-
-              {/* Card Content */}
-              <div className="card-content">
-                <motion.h3
-                  className="card-title"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={
-                    inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-                  }
-                  transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                >
-                  {service.title}
-                </motion.h3>
-
-                <motion.p
-                  className="card-description"
-                  initial={{ opacity: 0 }}
-                  animate={inView ? { opacity: 1 } : { opacity: 0 }}
-                  transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                >
-                  {service.description}
-                </motion.p>
-
-                <motion.div
-                  className="card-divider"
-                  initial={{ width: 0 }}
-                  animate={inView ? { width: "100%" } : { width: 0 }}
-                  transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
-                />
-
-                <motion.ul
-                  className="card-features"
-                  initial={{ opacity: 0 }}
-                  animate={inView ? { opacity: 1 } : { opacity: 0 }}
-                  transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                >
-                  {service.features.map((feature, idx) => (
-                    <motion.li
-                      key={idx}
-                      className="feature-item"
-                      initial={{ opacity: 0, x: -20 }}
+                    {/* Card Number */}
+                    <motion.div
+                      className="card-number"
+                      initial={{ opacity: 0, scale: 0 }}
                       animate={
-                        inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
+                        inView
+                          ? { opacity: 1, scale: 1 }
+                          : { opacity: 0, scale: 0 }
                       }
                       transition={{
                         duration: 0.4,
-                        delay: 0.9 + index * 0.1 + idx * 0.05,
+                        delay: 0.3 + (groupIndex * 4 + index) * 0.1,
                       }}
                     >
-                      <span className="feature-bullet">
-                        <AnimatedHexagon
-                          size={8}
-                          animate={false}
-                          filled={true}
-                        />
-                      </span>
-                      <span className="feature-text">{feature}</span>
-                    </motion.li>
-                  ))}
-                </motion.ul>
-              </div>
+                      {String(service.id).padStart(2, "0")}
+                    </motion.div>
 
-              {/* Card Hover Effect */}
-              <motion.div
-                className="card-hover-line"
-                initial={{ scaleX: 0 }}
-                whileHover={{ scaleX: 1 }}
-                transition={{ duration: 0.4 }}
-              />
+                    {/* Card Icon */}
+                    <motion.div
+                      className="card-icon"
+                      initial={{ opacity: 0, scale: 0, rotate: -180 }}
+                      animate={
+                        inView
+                          ? { opacity: 1, scale: 1, rotate: 0 }
+                          : { opacity: 0, scale: 0, rotate: -180 }
+                      }
+                      transition={{
+                        duration: 0.6,
+                        delay: 0.4 + (groupIndex * 4 + index) * 0.1,
+                      }}
+                    >
+                      <span className="icon-emoji">{service.icon}</span>
+                      <div className="icon-hexagon">
+                        <AnimatedHexagon size={80} animate={false} />
+                      </div>
+                    </motion.div>
+
+                    {/* Card Content */}
+                    <div className="card-content">
+                      <motion.h3
+                        className="card-title"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={
+                          inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                        }
+                        transition={{
+                          duration: 0.5,
+                          delay: 0.5 + (groupIndex * 4 + index) * 0.1,
+                        }}
+                      >
+                        {service.title}
+                      </motion.h3>
+
+                      <motion.p
+                        className="card-description"
+                        initial={{ opacity: 0 }}
+                        animate={inView ? { opacity: 1 } : { opacity: 0 }}
+                        transition={{
+                          duration: 0.5,
+                          delay: 0.6 + (groupIndex * 4 + index) * 0.1,
+                        }}
+                      >
+                        {service.description}
+                      </motion.p>
+
+                      <motion.div
+                        className="card-divider"
+                        initial={{ width: 0 }}
+                        animate={inView ? { width: "100%" } : { width: 0 }}
+                        transition={{
+                          duration: 0.6,
+                          delay: 0.7 + (groupIndex * 4 + index) * 0.1,
+                        }}
+                      />
+
+                      <motion.ul
+                        className="card-features"
+                        initial={{ opacity: 0 }}
+                        animate={inView ? { opacity: 1 } : { opacity: 0 }}
+                        transition={{
+                          duration: 0.5,
+                          delay: 0.8 + (groupIndex * 4 + index) * 0.1,
+                        }}
+                      >
+                        {service.features.map((feature, idx) => (
+                          <motion.li
+                            key={idx}
+                            className="feature-item"
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={
+                              inView
+                                ? { opacity: 1, x: 0 }
+                                : { opacity: 0, x: -20 }
+                            }
+                            transition={{
+                              duration: 0.4,
+                              delay:
+                                0.9 +
+                                (groupIndex * 4 + index) * 0.1 +
+                                idx * 0.05,
+                            }}
+                          >
+                            <span className="feature-bullet">
+                              <AnimatedHexagon
+                                size={8}
+                                animate={false}
+                                filled={true}
+                              />
+                            </span>
+                            <span className="feature-text">{feature}</span>
+                          </motion.li>
+                        ))}
+                      </motion.ul>
+                    </div>
+
+                    {/* Card Hover Effect */}
+                    <motion.div
+                      className="card-hover-line"
+                      initial={{ scaleX: 0 }}
+                      whileHover={{ scaleX: 1 }}
+                      transition={{ duration: 0.4 }}
+                    />
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
           ))}
         </motion.div>

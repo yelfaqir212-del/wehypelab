@@ -1,7 +1,7 @@
 .theme-toggle {
   position: relative;
-  width: 60px;
-  height: 60px;
+  width: 52px;
+  height: 52px;
   border: 2px solid var(--border);
   border-radius: 50%;
   background: var(--bg-secondary);
@@ -15,12 +15,12 @@
 }
 
 .theme-toggle:hover {
-  border-color: var(--text-primary);
+  border-color: var(--accent);
   background: var(--bg-tertiary);
 }
 
 .theme-toggle:focus-visible {
-  outline: 2px solid var(--text-primary);
+  outline: 2px solid var(--accent);
   outline-offset: 4px;
 }
 
@@ -30,7 +30,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-primary);
+  color: var(--accent);
 }
 
 .theme-toggle-icon svg {
@@ -68,7 +68,7 @@
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    var(--text-primary) 0%,
+    var(--accent) 0%,
     transparent 70%
   );
   opacity: 0;
@@ -90,7 +90,7 @@
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    var(--text-primary) 0%,
+    var(--accent) 0%,
     transparent 60%
   );
   opacity: 0;
@@ -106,8 +106,8 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .theme-toggle {
-    width: 50px;
-    height: 50px;
+    width: 44px;
+    height: 44px;
   }
 
   .theme-toggle-icon svg {

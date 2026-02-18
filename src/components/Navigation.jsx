@@ -20,10 +20,10 @@ const Navigation = () => {
 
   const navItems = [
     { id: "home", label: "Home", href: "#home" },
-    { id: "founders", label: "Founders", href: "#founders" },
-    { id: "services", label: "Services", href: "#services" },
-    { id: "about", label: "About", href: "#about" },
-    { id: "process", label: "Process", href: "#process" },
+    { id: "founders", label: "Leadership", href: "#founders" },
+    { id: "services", label: "Services B2B/B2C", href: "#services" },
+    { id: "about", label: "Pillars", href: "#about" },
+    { id: "process", label: "Method", href: "#process" },
     { id: "testimonials", label: "Testimonials", href: "#testimonials" },
     { id: "contact", label: "Contact", href: "#contact" },
   ];
@@ -123,9 +123,13 @@ const Navigation = () => {
           onClick={(e) => handleNavClick(e, "#home", "home")}
         >
           <div className="logo-hexagon">
-            <AnimatedHexagon size={40} animate={false} />
+            <AnimatedHexagon size={34} duration={4} />
           </div>
-          <span className="logo-text">WE HYPE</span>
+          <img
+            src="/wehypelogo.png"
+            alt="We Hype logo"
+            className="nav-logo-image"
+          />
         </motion.a>
 
         {/* Desktop Navigation */}
@@ -238,7 +242,9 @@ const Navigation = () => {
                 className="mobile-menu-footer"
                 variants={mobileItemVariants}
               >
-                <p className="mobile-menu-tagline">Amplify Your Influence</p>
+                <p className="mobile-menu-tagline">
+                  Building the Future of Influence.
+                </p>
               </motion.div>
             </motion.div>
           </>

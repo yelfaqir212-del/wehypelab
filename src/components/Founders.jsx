@@ -21,16 +21,16 @@ const Founders = () => {
       name: "Ibrahim Jaidi",
       role: "Co-Founder & CEO",
       image: founder1,
-      bio: "Visionary leader with extensive experience in digital marketing and influencer partnerships. Passionate about empowering creators to reach their full potential and build sustainable digital businesses.",
-      expertise: ["Digital Strategy", "Brand Partnerships", "Growth Hacking"],
+      bio: "Pilote la vision strategique de We Hype et connecte les enjeux business des marques avec les opportunites d'influence les plus pertinentes.",
+      expertise: ["Strategie d'influence", "Brand Partnerships", "Business Scaling"],
     },
     {
       id: 2,
       name: "Houda",
       role: "Co-Founder & COO",
       image: founder2,
-      bio: "Expert in content creation and audience engagement with a proven track record of building successful influencer programs across multiple platforms.",
-      expertise: ["Content Strategy", "Audience Growth", "Analytics"],
+      bio: "Orchestre l'execution operationnelle entre PR, events, contenus et performance pour assurer une croissance durable cote marques et createurs.",
+      expertise: ["Operations", "Activation", "Optimisation"],
     },
   ];
 
@@ -92,11 +92,11 @@ const Founders = () => {
           >
             <span className="eyebrow-number">02</span>
             <AnimatedLines type="horizontal" width="60px" delay={0.3} />
-            <span className="eyebrow-text">MEET THE TEAM</span>
+            <span className="eyebrow-text">LEADERSHIP</span>
           </motion.div>
 
           <motion.h2 className="section-title" variants={titleVariants}>
-            Our Founders
+            Leadership We Hype
           </motion.h2>
 
           <motion.p
@@ -105,9 +105,8 @@ const Founders = () => {
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Driven by passion and expertise, our founders bring years of
-            experience in digital marketing, content creation, and influencer
-            development.
+            Une equipe fondatrice orientee strategie, execution et resultats
+            pour faire le pont entre marques et createurs.
           </motion.p>
         </motion.div>
 

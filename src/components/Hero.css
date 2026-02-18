@@ -5,8 +5,23 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: var(--bg-primary);
+  background:
+    radial-gradient(circle at 20% 18%, var(--surface-glow) 0%, transparent 42%),
+    radial-gradient(circle at 82% 6%, var(--ambient-2) 0%, transparent 46%),
+    var(--bg-primary);
   padding: 8rem 2rem 4rem;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: -20% -10%;
+  background:
+    linear-gradient(120deg, transparent 0%, rgba(242, 107, 32, 0.12) 48%, transparent 100%);
+  filter: blur(60px);
+  opacity: 0.45;
+  z-index: 0;
+  pointer-events: none;
 }
 
 /* Grid Background */
@@ -27,7 +42,7 @@
 
 .floating-hexagon {
   opacity: 0.3;
-  color: var(--text-tertiary);
+  color: var(--accent-strong);
   filter: blur(1px);
 }
 
@@ -46,10 +61,10 @@
   background: linear-gradient(
     180deg,
     transparent 0%,
-    var(--text-primary) 50%,
+    var(--accent) 50%,
     transparent 100%
   );
-  opacity: 0.2;
+  opacity: 0.35;
 }
 
 .line-1 {
@@ -93,7 +108,7 @@
 .eyebrow-line {
   width: 60px;
   height: 1px;
-  background: var(--text-tertiary);
+  background: var(--accent);
 }
 
 .eyebrow-text {
@@ -109,7 +124,7 @@
 .hero-title {
   font-size: clamp(3rem, 8vw, 7rem);
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1;
   margin-bottom: 2rem;
   color: var(--text-primary);
   font-family: 'Space Grotesk', sans-serif;
@@ -120,6 +135,7 @@
 .title-line {
   display: block;
   overflow: hidden;
+  line-height: 1;
 }
 
 .title-word {
@@ -140,9 +156,17 @@
   left: 0;
   right: 0;
   height: 0.15em;
-  background: var(--text-primary);
-  opacity: 0.3;
+  background: var(--accent);
+  opacity: 0.55;
   z-index: -1;
+}
+
+.title-word.brand-we {
+  color: var(--accent);
+}
+
+.title-word.brand-hype {
+  color: var(--text-primary);
 }
 
 /* Subtitle */
@@ -177,9 +201,9 @@
   font-family: 'Space Grotesk', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border: 2px solid var(--text-primary);
+  border: 2px solid var(--accent);
   background: transparent;
-  color: var(--text-primary);
+  color: var(--accent);
   cursor: pointer;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -189,7 +213,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: var(--text-primary);
+  background: var(--accent);
   transform: translateY(100%);
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: -1;
@@ -200,20 +224,22 @@
 }
 
 .cta-button.primary {
-  background: var(--text-primary);
-  color: var(--bg-primary);
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--text-on-accent);
 }
 
 .cta-button.primary::before {
-  background: var(--bg-primary);
+  background: var(--text-primary);
 }
 
 .cta-button.primary:hover {
-  color: var(--text-primary);
+  border-color: var(--text-primary);
+  color: var(--bg-primary);
 }
 
 .cta-button.secondary:hover {
-  color: var(--bg-primary);
+  color: var(--text-on-accent);
 }
 
 .button-text {
@@ -256,9 +282,10 @@
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
   font-family: 'Space Grotesk', sans-serif;
-  color: var(--text-primary);
+  color: var(--accent);
   line-height: 1;
   margin-bottom: 0.5rem;
+  text-shadow: 0 0 20px rgba(242, 107, 32, 0.32);
 }
 
 .stat-label {
@@ -299,13 +326,13 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--text-tertiary);
+  color: var(--accent);
 }
 
 .scroll-line {
   width: 2px;
   height: 40px;
-  background: var(--text-tertiary);
+  background: var(--accent);
   border-radius: 2px;
 }
 
@@ -319,6 +346,7 @@
   background: linear-gradient(
     180deg,
     transparent 0%,
+    rgba(242, 107, 32, 0.12) 62%,
     var(--bg-primary) 100%
   );
   z-index: 3;

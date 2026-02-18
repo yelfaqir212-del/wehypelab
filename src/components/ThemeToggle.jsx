@@ -49,11 +49,11 @@ const ThemeToggle = () => {
 
   const glowVariants = {
     light: {
-      boxShadow: '0 0 20px rgba(0, 0, 0, 0.1)',
+      boxShadow: '0 0 20px rgba(242, 107, 32, 0.22)',
       transition: { duration: 0.3 }
     },
     dark: {
-      boxShadow: '0 0 20px rgba(255, 255, 255, 0.1)',
+      boxShadow: '0 0 24px rgba(242, 107, 32, 0.32)',
       transition: { duration: 0.3 }
     }
   };
@@ -66,7 +66,7 @@ const ThemeToggle = () => {
       animate={theme}
       whileHover={{
         scale: 1.1,
-        boxShadow: isDark ? '0 0 30px rgba(255, 255, 255, 0.2)' : '0 0 30px rgba(0, 0, 0, 0.2)'
+        boxShadow: isDark ? '0 0 34px rgba(242, 107, 32, 0.46)' : '0 0 30px rgba(242, 107, 32, 0.34)'
       }}
       whileTap={{ scale: 0.95 }}
       aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
