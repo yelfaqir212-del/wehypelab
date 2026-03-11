@@ -80,6 +80,8 @@
     line-height: 1.7;
     color: var(--text-secondary);
     max-width: 700px;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .section-header.centered .section-description {
@@ -93,7 +95,7 @@
 
 .about-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
     gap: 2.5rem;
     margin-top: 4rem;
 }
@@ -147,6 +149,8 @@
     font-size: 1rem;
     line-height: 1.6;
     color: var(--text-secondary);
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 /* Process Section */
@@ -260,7 +264,7 @@
 
 .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
     gap: 2.5rem;
     margin-top: 4rem;
 }
@@ -718,6 +722,7 @@
 
     .section-description {
         font-size: 1rem;
+        max-width: 100%;
     }
 
     .about-grid {
@@ -727,7 +732,18 @@
 
     .process-step {
         flex-direction: column;
-        gap: 1.5rem;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .process-step:hover {
+        transform: none;
+    }
+
+    .step-number {
+        width: 64px;
+        height: 64px;
+        font-size: 1.4rem;
     }
 
     .step-connector {
@@ -749,6 +765,7 @@
 
     .footer-brand-copy {
         flex-direction: column;
+        align-items: center;
         gap: 0.85rem;
     }
 
@@ -767,23 +784,43 @@
         padding: 4rem 1rem;
     }
 
+    .section-header {
+        margin-bottom: 3rem;
+    }
+
+    .section-header.centered {
+        margin-bottom: 3rem;
+    }
+
     .about-card,
     .testimonial-card {
-        padding: 2rem 1.5rem;
+        padding: 2rem 1.25rem;
+    }
+
+    .about-card h3 {
+        font-size: 1.4rem;
     }
 
     .step-number {
-        width: 60px;
-        height: 60px;
-        font-size: 1.25rem;
+        width: 56px;
+        height: 56px;
+        font-size: 1.1rem;
     }
 
     .step-content h3 {
-        font-size: 1.5rem;
+        font-size: 1.35rem;
+    }
+
+    .step-content p {
+        font-size: 0.95rem;
     }
 
     .testimonial-quote {
         font-size: 4rem;
+    }
+
+    .testimonial-text {
+        font-size: 1rem;
     }
 
     .contact-form-wrapper {
@@ -792,6 +829,18 @@
 
     .submit-button {
         width: 100%;
+    }
+
+    .footer-partner-logo {
+        width: min(150px, 80vw);
+    }
+
+    .contact-item {
+        padding: 1.25rem;
+    }
+
+    .contact-details p {
+        font-size: 1rem;
     }
 }
 

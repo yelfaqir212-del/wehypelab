@@ -403,6 +403,10 @@
         display: none;
     }
 
+    .lang-toggle {
+        display: none;
+    }
+
     .mobile-menu-toggle {
         display: flex;
     }

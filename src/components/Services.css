@@ -96,6 +96,8 @@
   line-height: 1.7;
   color: var(--text-secondary);
   margin-bottom: 1rem;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .services-group-cta {
@@ -123,7 +125,7 @@
 /* Services Grid */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
   gap: 2.5rem;
   margin-top: 4rem;
 }
@@ -245,6 +247,8 @@
   line-height: 1.6;
   color: var(--text-secondary);
   margin-bottom: 1.5rem;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .card-divider {
@@ -294,6 +298,8 @@
 
 .feature-text {
   font-weight: 500;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 /* Card Hover Line */
