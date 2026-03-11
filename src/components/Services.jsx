@@ -14,9 +14,9 @@ const Services = () => {
   const serviceGroups = [
     {
       id: "b2b",
-      label: "B2B - Pour les marques",
+      label: "B2B – Pour les marques",
       description:
-        "Un accompagnement stratégique et opérationnel pour activer l'influence comme levier business.",
+        "Un accompagnement sur-mesure, stratégique et opérationnel, pour transformer l'influence en véritable levier de croissance.",
       cta: "Parler a l'equipe",
       ctaTarget: "#contact",
       services: [
@@ -24,12 +24,12 @@ const Services = () => {
           id: 1,
           title: "Campagnes d'influence",
           description:
-            "Concevoir et executer des campagnes d'influence full-funnel, du cadrage aux performances finales.",
+            "Conception et déploiement de campagnes d'influence full-funnel, du cadrage stratégique à l'analyse des performances.",
           features: [
-            "Selection de talents",
-            "Narratif de campagne",
-            "Pilotage operationnel",
-            "Reporting et ROI",
+            "Identification et sélection des talents",
+            "Définition du storytelling de campagne",
+            "Pilotage et coordination opérationnelle",
+            "Suivi des résultats et mesure du ROI",
           ],
           icon: "📣",
         },
@@ -37,25 +37,25 @@ const Services = () => {
           id: 2,
           title: "PR",
           description:
-            "Amplifier votre prise de parole avec des activations media et des relations presse credibles.",
+            "Renforcer votre prise de parole à travers des activations médias et des relations presse à forte crédibilité.",
           features: [
             "Relations presse",
-            "Narration de marque",
-            "Activation editors & KOLs",
-            "Visibilite multi-canale",
+            "Construction de la narration de marque",
+            "Activation d'influenceurs et KOLs",
+            "Visibilité multi-canale",
           ],
           icon: "📰",
         },
         {
           id: 3,
-          title: "Events",
+          title: "Événements",
           description:
-            "Imaginer des experiences memorables qui connectent votre marque aux createurs et aux communautes.",
+            "Concevoir des expériences mémorables qui connectent votre marque aux créateurs et à leurs communautés.",
           features: [
-            "Concept & production",
-            "Guestlist createurs",
-            "Couverture social media",
-            "Mesure d'impact",
+            "Concept et production",
+            "Couverture créateurs",
+            "Relais et amplification sur les réseaux sociaux",
+            "Mesure de l'impact",
           ],
           icon: "🎤",
         },
@@ -63,12 +63,12 @@ const Services = () => {
           id: 4,
           title: "Gestion de talents",
           description:
-            "Identifier, encadrer et valoriser les profils influenceurs alignes avec vos objectifs de marque.",
+            "Identifier, accompagner et valoriser les profils d'influence en cohérence avec vos objectifs de marque.",
           features: [
-            "Casting strategique",
-            "Negociation partenariats",
+            "Casting stratégique",
+            "Négociation de partenariats",
             "Suivi contractuel",
-            "Optimisation de collaborations",
+            "Optimisation des collaborations",
           ],
           icon: "🤝",
         },
@@ -76,22 +76,22 @@ const Services = () => {
     },
     {
       id: "b2c",
-      label: "B2C - Pour les createurs",
+      label: "B2C – Pour les créateurs",
       description:
-        "Un cadre de progression pour structurer votre marque personnelle, accelerer votre croissance et monetiser durablement.",
+        "Une méthodologie claire pour renforcer votre marque personnelle, stimuler votre développement et générer des revenus de manière pérenne.",
       cta: "Booster ma croissance",
       ctaTarget: "#contact",
       services: [
         {
           id: 5,
-          title: "Formation influenceurs",
+          title: "Formation des influenceurs",
           description:
-            "Monter en competence avec une methode concrete sur le contenu, l'audience et la performance.",
+            "Développer les compétences avec une approche concrète axée sur le contenu, l'audience et la performance.",
           features: [
             "Positionnement de niche",
-            "Formats qui convertissent",
-            "Systemes de production",
-            "Lecture des KPIs",
+            "Formats à fort potentiel de conversion",
+            "Organisation et process de production",
+            "Lecture et analyse des KPIs",
           ],
           icon: "🎓",
         },
@@ -99,12 +99,12 @@ const Services = () => {
           id: 6,
           title: "Personal branding",
           description:
-            "Construire une identite de marque forte, coherente et reconnaissable sur toutes vos plateformes.",
+            "Construire une identité de marque forte, cohérente et reconnaissable sur l'ensemble des plateformes.",
           features: [
             "Storytelling personnel",
-            "Territoire visuel",
-            "Voix editoriale",
-            "Cohesion multicanale",
+            "Définition du territoire visuel",
+            "Ligne éditoriale",
+            "Cohérence multicanale",
           ],
           icon: "✨",
         },
@@ -112,25 +112,25 @@ const Services = () => {
           id: 7,
           title: "Growth hacking",
           description:
-            "Activer des leviers de croissance test-and-learn pour gagner en visibilite et en engagement.",
+            "Activer des leviers de croissance en mode test & learn pour renforcer la visibilité et l'engagement.",
           features: [
-            "Acceleration organique",
-            "Boucles d'acquisition",
-            "Optimisation formats",
-            "Scaling des contenus",
+            "Accélération organique",
+            "Acquisition d'audience",
+            "Optimisation des formats",
+            "Scalabilité des contenus",
           ],
           icon: "🚀",
         },
         {
           id: 8,
-          title: "Monetisation",
+          title: "Monétisation",
           description:
-            "Structurer des revenus predictibles via les deals marques, l'offre et les activations commerciales.",
+            "Structurer des sources de revenus durables via les partenariats de marque, les offres propres et les activations commerciales.",
           features: [
-            "Offres createurs",
-            "Negociation sponsoring",
-            "Diversification revenus",
-            "Pilotage rentabilite",
+            "Offres créateurs",
+            "Négociation de sponsoring",
+            "Diversification des revenus",
+            "Pilotage de la rentabilité",
           ],
           icon: "💰",
         },

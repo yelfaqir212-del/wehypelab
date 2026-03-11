@@ -25,11 +25,11 @@ function App() {
                   <div className="eyebrow-line"></div>
                   <span className="eyebrow-text">PILIERS DE COMM</span>
                 </div>
-                <h2 className="section-title">Piliers de communication We Hype</h2>
+                <h2 className="section-title">Piliers de communication – We Hype</h2>
                 <p className="section-description">
-                  Notre prise de parole repose sur trois piliers qui renforcent
-                  la confiance, creent de la valeur concrete et installent une
-                  image premium.
+                  Notre prise de parole s&apos;articule autour de trois piliers
+                  qui renforcent la confiance, créent de la valeur tangible et
+                  installent une image premium durable.
                 </p>
               </div>
 
@@ -38,24 +38,26 @@ function App() {
                   <div className="about-icon">🎯</div>
                   <h3>Authority (Expertise)</h3>
                   <p>
-                    Montrer la maitrise strategique: data, process, etudes de
-                    cas et resultats activables.
+                    Démontrer une maîtrise stratégique : data, process, études
+                    de cas et résultats concrets et mesurables.
                   </p>
                 </div>
                 <div className="about-card">
                   <div className="about-icon">📚</div>
                   <h3>Education (Valeur)</h3>
                   <p>
-                    Apporter des conseils concrets: tips createurs, insights
-                    marketing et methodes applicables rapidement.
+                    Apporter des conseils actionnables : bonnes pratiques pour
+                    les créateurs, insights marketing et méthodes directement
+                    applicables.
                   </p>
                 </div>
                 <div className="about-card">
                   <div className="about-icon">🔥</div>
                   <h3>Hype / Branding</h3>
                   <p>
-                    Construire l'image premium: vision, mindset et culture de
-                    marque pour durer dans le temps.
+                    Construire une image premium fondée sur une vision claire,
+                    un mindset affirmé et une culture de marque conçue pour
+                    durer.
                   </p>
                 </div>
               </div>
@@ -73,8 +75,8 @@ function App() {
                 </div>
                 <h2 className="section-title">Discovery to Scaling</h2>
                 <p className="section-description">
-                  Une methode en 5 etapes pour transformer l'influence en
-                  impact mesurable, cote marques comme cote createurs.
+                  Une méthode en 5 étapes pour transformer l&apos;influence en
+                  impact mesurable, côté marques comme côté créateurs.
                 </p>
               </div>
 
@@ -84,8 +86,8 @@ function App() {
                   <div className="step-content">
                     <h3>Discovery</h3>
                     <p>
-                      Audit des objectifs, du marche et des audiences pour
-                      poser un diagnostic clair.
+                      Audit des objectifs, du marché et des audiences afin
+                      d&apos;établir un diagnostic précis.
                     </p>
                   </div>
                   <div className="step-connector"></div>
@@ -94,10 +96,10 @@ function App() {
                 <div className="process-step">
                   <div className="step-number">02</div>
                   <div className="step-content">
-                    <h3>Strategie</h3>
+                    <h3>Stratégie</h3>
                     <p>
-                      Definition du plan d'action, des messages cles et du
-                      systeme de priorites.
+                      Définition du plan d&apos;action, des messages clés et
+                      des priorités stratégiques.
                     </p>
                   </div>
                   <div className="step-connector"></div>
@@ -108,8 +110,8 @@ function App() {
                   <div className="step-content">
                     <h3>Activation</h3>
                     <p>
-                      Lancement des campagnes, contenus et activations selon la
-                      feuille de route.
+                      Déploiement des campagnes, contenus et activations selon
+                      une feuille de route structurée.
                     </p>
                   </div>
                   <div className="step-connector"></div>
@@ -121,7 +123,7 @@ function App() {
                     <h3>Optimisation</h3>
                     <p>
                       Analyse continue des performances et ajustements rapides
-                      pour maximiser l'impact.
+                      pour maximiser l&apos;impact.
                     </p>
                   </div>
                   <div className="step-connector"></div>
@@ -132,8 +134,8 @@ function App() {
                   <div className="step-content">
                     <h3>Scaling</h3>
                     <p>
-                      Industrialisation des leviers qui fonctionnent pour
-                      accelerer la croissance durable.
+                      Industrialisation des leviers performants afin
+                      d&apos;accélérer une croissance durable.
                     </p>
                   </div>
                 </div>

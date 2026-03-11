@@ -105,8 +105,9 @@ const Founders = () => {
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Une equipe fondatrice orientee strategie, execution et resultats
-            pour faire le pont entre marques et createurs.
+            Une équipe fondatrice axée sur la stratégie, la performance et
+            l'exécution, créant un lien structurant et efficace entre les
+            marques et les créateurs.
           </motion.p>
         </motion.div>
 
