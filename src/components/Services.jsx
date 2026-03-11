@@ -3,7 +3,11 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import AnimatedHexagon from "./animations/AnimatedHexagon";
 import AnimatedLines from "./animations/AnimatedLines";
+import { useLanguage } from "../contexts/LanguageContext";
 import "./Services.css";
+
+const B2B_ICONS = ["📣", "📰", "🎤", "🤝"];
+const B2C_ICONS = ["🎓", "✨", "🚀", "💰"];
 
 const Services = () => {
   const [ref, inView] = useInView({
@@ -11,130 +15,37 @@ const Services = () => {
     threshold: 0.1,
   });
 
+  const { t, locale } = useLanguage();
+  const s = locale.services;
+
   const serviceGroups = [
     {
       id: "b2b",
-      label: "B2B – Pour les marques",
-      description:
-        "Un accompagnement sur-mesure, stratégique et opérationnel, pour transformer l'influence en véritable levier de croissance.",
-      cta: "Parler a l'equipe",
+      label: s.b2b.label,
+      description: s.b2b.description,
+      cta: s.b2b.cta,
       ctaTarget: "#contact",
-      services: [
-        {
-          id: 1,
-          title: "Campagnes d'influence",
-          description:
-            "Conception et déploiement de campagnes d'influence full-funnel, du cadrage stratégique à l'analyse des performances.",
-          features: [
-            "Identification et sélection des talents",
-            "Définition du storytelling de campagne",
-            "Pilotage et coordination opérationnelle",
-            "Suivi des résultats et mesure du ROI",
-          ],
-          icon: "📣",
-        },
-        {
-          id: 2,
-          title: "PR",
-          description:
-            "Renforcer votre prise de parole à travers des activations médias et des relations presse à forte crédibilité.",
-          features: [
-            "Relations presse",
-            "Construction de la narration de marque",
-            "Activation d'influenceurs et KOLs",
-            "Visibilité multi-canale",
-          ],
-          icon: "📰",
-        },
-        {
-          id: 3,
-          title: "Événements",
-          description:
-            "Concevoir des expériences mémorables qui connectent votre marque aux créateurs et à leurs communautés.",
-          features: [
-            "Concept et production",
-            "Couverture créateurs",
-            "Relais et amplification sur les réseaux sociaux",
-            "Mesure de l'impact",
-          ],
-          icon: "🎤",
-        },
-        {
-          id: 4,
-          title: "Gestion de talents",
-          description:
-            "Identifier, accompagner et valoriser les profils d'influence en cohérence avec vos objectifs de marque.",
-          features: [
-            "Casting stratégique",
-            "Négociation de partenariats",
-            "Suivi contractuel",
-            "Optimisation des collaborations",
-          ],
-          icon: "🤝",
-        },
-      ],
+      services: s.b2bItems.map((item, i) => ({
+        id: i + 1,
+        title: item.title,
+        description: item.description,
+        features: item.features,
+        icon: B2B_ICONS[i],
+      })),
     },
     {
       id: "b2c",
-      label: "B2C – Pour les créateurs",
-      description:
-        "Une méthodologie claire pour renforcer votre marque personnelle, stimuler votre développement et générer des revenus de manière pérenne.",
-      cta: "Booster ma croissance",
+      label: s.b2c.label,
+      description: s.b2c.description,
+      cta: s.b2c.cta,
       ctaTarget: "#contact",
-      services: [
-        {
-          id: 5,
-          title: "Formation des influenceurs",
-          description:
-            "Développer les compétences avec une approche concrète axée sur le contenu, l'audience et la performance.",
-          features: [
-            "Positionnement de niche",
-            "Formats à fort potentiel de conversion",
-            "Organisation et process de production",
-            "Lecture et analyse des KPIs",
-          ],
-          icon: "🎓",
-        },
-        {
-          id: 6,
-          title: "Personal branding",
-          description:
-            "Construire une identité de marque forte, cohérente et reconnaissable sur l'ensemble des plateformes.",
-          features: [
-            "Storytelling personnel",
-            "Définition du territoire visuel",
-            "Ligne éditoriale",
-            "Cohérence multicanale",
-          ],
-          icon: "✨",
-        },
-        {
-          id: 7,
-          title: "Growth hacking",
-          description:
-            "Activer des leviers de croissance en mode test & learn pour renforcer la visibilité et l'engagement.",
-          features: [
-            "Accélération organique",
-            "Acquisition d'audience",
-            "Optimisation des formats",
-            "Scalabilité des contenus",
-          ],
-          icon: "🚀",
-        },
-        {
-          id: 8,
-          title: "Monétisation",
-          description:
-            "Structurer des sources de revenus durables via les partenariats de marque, les offres propres et les activations commerciales.",
-          features: [
-            "Offres créateurs",
-            "Négociation de sponsoring",
-            "Diversification des revenus",
-            "Pilotage de la rentabilité",
-          ],
-          icon: "💰",
-        },
-      ],
+      services: s.b2cItems.map((item, i) => ({
+        id: i + 5,
+        title: item.title,
+        description: item.description,
+        features: item.features,
+        icon: B2C_ICONS[i],
+      })),
     },
   ];
 
@@ -211,11 +122,11 @@ const Services = () => {
           >
             <span className="eyebrow-number">03</span>
             <AnimatedLines type="horizontal" width="60px" delay={0.3} />
-            <span className="eyebrow-text">B2B + B2C SOLUTIONS</span>
+            <span className="eyebrow-text">{t("services.eyebrow")}</span>
           </motion.div>
 
           <motion.h2 className="section-title" variants={titleVariants}>
-            Services We Hype
+            {t("services.title")}
           </motion.h2>
 
           <motion.p
@@ -224,8 +135,7 @@ const Services = () => {
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Une offre a double dimension: activations pour les marques et
-            acceleration pour les createurs, dans un meme ecosysteme.
+            {t("services.description")}
           </motion.p>
         </motion.div>
 

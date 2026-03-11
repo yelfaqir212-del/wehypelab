@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
 import AnimatedHexagon from "./animations/AnimatedHexagon";
+import { useLanguage } from "../contexts/LanguageContext";
 import "./Navigation.css";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const { lang, setLang, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,13 +21,13 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { id: "home", label: "Home", href: "#home" },
-    { id: "founders", label: "Leadership", href: "#founders" },
-    { id: "services", label: "Services B2B/B2C", href: "#services" },
-    { id: "about", label: "Pillars", href: "#about" },
-    { id: "process", label: "Method", href: "#process" },
-    { id: "testimonials", label: "Testimonials", href: "#testimonials" },
-    { id: "contact", label: "Contact", href: "#contact" },
+    { id: "home", label: t("nav.home"), href: "#home" },
+    { id: "founders", label: t("nav.leadership"), href: "#founders" },
+    { id: "services", label: t("nav.services"), href: "#services" },
+    { id: "about", label: t("nav.pillars"), href: "#about" },
+    { id: "process", label: t("nav.method"), href: "#process" },
+    { id: "testimonials", label: t("nav.testimonials"), href: "#testimonials" },
+    { id: "contact", label: t("nav.contact"), href: "#contact" },
   ];
 
   const handleNavClick = (e, href, id) => {
@@ -155,6 +157,25 @@ const Navigation = () => {
 
         {/* Right Section */}
         <motion.div className="nav-right" variants={itemVariants}>
+          {/* Language Toggle */}
+          <div className="lang-toggle">
+            <button
+              className={`lang-btn ${lang === "fr" ? "lang-btn--active" : ""}`}
+              onClick={() => setLang("fr")}
+              aria-label="Français"
+            >
+              FR
+            </button>
+            <span className="lang-divider">|</span>
+            <button
+              className={`lang-btn ${lang === "en" ? "lang-btn--active" : ""}`}
+              onClick={() => setLang("en")}
+              aria-label="English"
+            >
+              EN
+            </button>
+          </div>
+
           <ThemeToggle />
 
           {/* Mobile Menu Toggle */}
@@ -237,13 +258,33 @@ const Navigation = () => {
                 ))}
               </motion.ul>
 
+              {/* Mobile Lang Toggle */}
+              <motion.div
+                className="mobile-lang-toggle"
+                variants={mobileItemVariants}
+              >
+                <button
+                  className={`lang-btn ${lang === "fr" ? "lang-btn--active" : ""}`}
+                  onClick={() => setLang("fr")}
+                >
+                  FR
+                </button>
+                <span className="lang-divider">|</span>
+                <button
+                  className={`lang-btn ${lang === "en" ? "lang-btn--active" : ""}`}
+                  onClick={() => setLang("en")}
+                >
+                  EN
+                </button>
+              </motion.div>
+
               {/* Mobile Menu Footer */}
               <motion.div
                 className="mobile-menu-footer"
                 variants={mobileItemVariants}
               >
                 <p className="mobile-menu-tagline">
-                  Building the Future of Influence.
+                  {t("nav.tagline")}
                 </p>
               </motion.div>
             </motion.div>

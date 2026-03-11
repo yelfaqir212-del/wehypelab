@@ -161,6 +161,49 @@
     z-index: 10;
 }
 
+/* Language Toggle */
+.lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.lang-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--text-tertiary);
+    padding: 0.2rem 0.1rem;
+    transition: color 0.25s ease;
+    text-transform: uppercase;
+}
+
+.lang-btn:hover {
+    color: var(--accent);
+}
+
+.lang-btn--active {
+    color: var(--accent);
+}
+
+.lang-divider {
+    color: var(--border);
+    font-size: 0.75rem;
+    user-select: none;
+}
+
+.mobile-lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
 /* Mobile Menu Toggle */
 .mobile-menu-toggle {
     display: none;

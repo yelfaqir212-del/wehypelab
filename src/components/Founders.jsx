@@ -3,11 +3,10 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import AnimatedHexagon from "./animations/AnimatedHexagon";
 import AnimatedLines from "./animations/AnimatedLines";
+import { useLanguage } from "../contexts/LanguageContext";
 import "./Founders.css";
 
-// Placeholder images - replace these with actual founder images
-const founder1 = "/founder1.jpg";
-const founder2 = "/founder2.jpg";
+const founderImages = ["/founder1.jpg", "/founder2.jpg"];
 
 const Founders = () => {
   const [ref, inView] = useInView({
@@ -15,24 +14,8 @@ const Founders = () => {
     threshold: 0.1,
   });
 
-  const founders = [
-    {
-      id: 1,
-      name: "Ibrahim Jaidi",
-      role: "Co-Founder & CEO",
-      image: founder1,
-      bio: "Pilote la vision strategique de We Hype et connecte les enjeux business des marques avec les opportunites d'influence les plus pertinentes.",
-      expertise: ["Strategie d'influence", "Brand Partnerships", "Business Scaling"],
-    },
-    {
-      id: 2,
-      name: "Houda",
-      role: "Co-Founder & COO",
-      image: founder2,
-      bio: "Orchestre l'execution operationnelle entre PR, events, contenus et performance pour assurer une croissance durable cote marques et createurs.",
-      expertise: ["Operations", "Activation", "Optimisation"],
-    },
-  ];
+  const { t, locale } = useLanguage();
+  const founders = locale.founders.items;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -92,11 +75,11 @@ const Founders = () => {
           >
             <span className="eyebrow-number">02</span>
             <AnimatedLines type="horizontal" width="60px" delay={0.3} />
-            <span className="eyebrow-text">LEADERSHIP</span>
+            <span className="eyebrow-text">{t("founders.eyebrow")}</span>
           </motion.div>
 
           <motion.h2 className="section-title" variants={titleVariants}>
-            Leadership We Hype
+            {t("founders.title")}
           </motion.h2>
 
           <motion.p
@@ -105,9 +88,7 @@ const Founders = () => {
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Une équipe fondatrice axée sur la stratégie, la performance et
-            l'exécution, créant un lien structurant et efficace entre les
-            marques et les créateurs.
+            {t("founders.description")}
           </motion.p>
         </motion.div>
 
@@ -120,7 +101,7 @@ const Founders = () => {
         >
           {founders.map((founder, index) => (
             <motion.div
-              key={founder.id}
+              key={index}
               className="founder-card"
               variants={cardVariants}
               whileHover={{
@@ -154,9 +135,9 @@ const Founders = () => {
                   />
                 </div>
                 <div
-                  className={`founder-image ${founder.id === 2 ? "grayscale" : ""}`}
+                  className={`founder-image ${index === 1 ? "grayscale" : ""}`}
                 >
-                  <img src={founder.image} alt={founder.name} />
+                  <img src={founderImages[index]} alt={founder.name} />
                   <div className="image-overlay"></div>
                 </div>
                 <motion.div

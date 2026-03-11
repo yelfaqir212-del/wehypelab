@@ -2,10 +2,13 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import AnimatedHexagon from "./animations/AnimatedHexagon";
 import AnimatedLines, { GridLines } from "./animations/AnimatedLines";
+import { useLanguage } from "../contexts/LanguageContext";
 import "./Hero.css";
 
 const Hero = () => {
   const heroRef = useRef(null);
+  const { t } = useLanguage();
+
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"],
@@ -151,7 +154,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <span className="eyebrow-line"></span>
-            <span className="eyebrow-text">INFLUENCE ECOSYSTEM B2B / B2C</span>
+            <span className="eyebrow-text">{t("hero.eyebrow")}</span>
             <span className="eyebrow-line"></span>
           </motion.div>
 
@@ -188,10 +191,9 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
           >
-            We Hype, un écosystème d&apos;influence à double dimension — un pont
-            stratégique entre marques et créateurs.
+            {t("hero.subtitle")}
             <br />
-            Building the Future of Influence.
+            {t("hero.subtitle2")}
           </motion.p>
 
           {/* CTA Buttons */}
@@ -208,7 +210,7 @@ const Hero = () => {
               whileTap="tap"
               onClick={(e) => scrollToSection(e, "#contact")}
             >
-              <span className="button-text">Lancer une campagne</span>
+              <span className="button-text">{t("hero.cta1")}</span>
               <span className="button-hexagon">
                 <AnimatedHexagon size={20} animate={false} filled={true} />
               </span>
@@ -221,7 +223,7 @@ const Hero = () => {
               whileTap="tap"
               onClick={(e) => scrollToSection(e, "#services")}
             >
-              <span className="button-text">Rejoindre le Lab</span>
+              <span className="button-text">{t("hero.cta2")}</span>
               <motion.span
                 className="button-arrow"
                 initial={{ x: 0 }}
@@ -249,7 +251,7 @@ const Hero = () => {
               >
                 2
               </motion.div>
-              <div className="stat-label">Dimensions: B2B &amp; B2C</div>
+              <div className="stat-label">{t("hero.statLabel1")}</div>
             </div>
 
             <div className="stat-divider">
@@ -265,7 +267,7 @@ const Hero = () => {
               >
                 5
               </motion.div>
-              <div className="stat-label">Etapes de methode</div>
+              <div className="stat-label">{t("hero.statLabel2")}</div>
             </div>
 
             <div className="stat-divider">
@@ -281,7 +283,7 @@ const Hero = () => {
               >
                 360°
               </motion.div>
-              <div className="stat-label">Influence ecosystem</div>
+              <div className="stat-label">{t("hero.statLabel3")}</div>
             </div>
           </motion.div>
         </div>
@@ -301,7 +303,7 @@ const Hero = () => {
         }}
         onClick={(e) => scrollToSection(e, "#services")}
       >
-        <span className="scroll-text">Scroll</span>
+        <span className="scroll-text">{t("hero.scroll")}</span>
         <motion.div
           className="scroll-line"
           animate={{ height: [0, 40, 0] }}
